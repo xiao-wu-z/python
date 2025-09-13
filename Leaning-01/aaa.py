@@ -28,32 +28,51 @@ from pywinauto import Application,mouse
 #
 # win.close()
 
-app = Application(backend="uia").connect(process=28224)
-
-win = app.window(title = "抖音")
-
-win.wait("visible")
-
-# liked_group = win.child_window(title="16.1万", control_type="Group")
+# app = Application(backend="uia").connect(process=28224)
 #
-# # 获取liked_group子控件
-# like_icon = liked_group.children()[0]
-# # 点赞
-# like_icon.click_input()
+# win = app.window(title = "抖音")
 #
-# point = win.rectangle().mid_point()
+# win.wait("visible")
 #
-# mouse.scroll(coords=(point.x, point.y), wheel_dist=-500)
+# # liked_group = win.child_window(title="16.1万", control_type="Group")
+# #
+# # # 获取liked_group子控件
+# # like_icon = liked_group.children()[0]
+# # # 点赞
+# # like_icon.click_input()
+# #
+# # point = win.rectangle().mid_point()
+# #
+# # mouse.scroll(coords=(point.x, point.y), wheel_dist=-500)
+# #
+# # win.print_control_identifiers()
 #
-# win.print_control_identifiers()
+# for i in range(0,3):
+#     point = win.rectangle().mid_point()
+#     time.sleep(2)
+#
+#     # win.double_click_input()
+#
+#     mouse.double_click(coords=(point.x, point.y))
+#     time.sleep(2)
+#
+#     mouse.scroll(coords=(point.x, point.y), wheel_dist=-500)
 
-for i in range(0,3):
-    point = win.rectangle().mid_point()
-    time.sleep(2)
 
-    # win.double_click_input()
 
-    mouse.double_click(coords=(point.x, point.y))
-    time.sleep(2)
 
-    mouse.scroll(coords=(point.x, point.y), wheel_dist=-500)
+app = Application(backend="uia").connect(process=14332)
+
+win = app.window(title = "赵世隆")
+
+win.print_control_identifiers()
+
+for i in range (0, 100):
+    edit = win.child_window(auto_id="chat_input_field", control_type="Edit")
+    # 唤起输入框
+    edit.click_input()
+    # 输入文本
+    edit.type_keys("丢人")
+    # 点击发送
+    send = win.child_window(title="发送(S)", control_type="Button")
+    send.click_input()
