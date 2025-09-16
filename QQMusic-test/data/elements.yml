@@ -1,0 +1,19 @@
+logo:
+  auto_id: QQMusic.background.head.headLeft.logo
+  ControlType: Text
+
+search:
+  auto_id: QQMusic.background.head.headRight.searchBox.lineEdit
+  ControlType: Edit
+
+skin:
+  auto_id: QQMusic.background.head.headRight.settingBox.skin
+  ControlType: Button
+
+最小化:
+  auto_id: QQMusic.background.head.headRight.settingBox.min
+  ControlType: Button
+
+导入音乐:
+  auto_id: QQMusic.background.body.bodyRight.controlBox.play2.addLocal
+  ControlType: Button
